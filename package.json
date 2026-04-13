@@ -1,6 +1,6 @@
 {
   "name": "@jvaarala/vm-buketti",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "TypeScript client for the Finnish state budget open data API (budjetti.vm.fi)",
   "author": "Jesse Väärälä",
   "license": "MIT",
@@ -25,10 +25,16 @@
     }
   },
   "sideEffects": false,
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
     "gen-schema": "node scripts/gen-schema.mjs",
     "prepublishOnly": "npm run build"
   },
@@ -45,6 +51,10 @@
     "client"
   ],
   "devDependencies": {
-    "typescript": "^6.0.2"
+    "@types/node": "^25.6.0",
+    "@vitest/coverage-v8": "^4.1.4",
+    "happy-dom": "^20.8.9",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.4"
   }
 }
