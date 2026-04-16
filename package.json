@@ -1,6 +1,6 @@
 {
   "name": "@jvaarala/vm-buketti",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "TypeScript client for the Finnish state budget open data API (budjetti.vm.fi)",
   "author": "Jesse Väärälä",
   "license": "MIT",

@@ -378,7 +378,7 @@ function mergeMenoluku(lists: Menoluku[][]): MergedMenoluku[] {
       map.get(k)!.push(m);
     }
   return [...map.entries()].map(([numero, items]) => {
-    const Menomomentti = mergeMenomomentti(items.map(i => i.Menomomentti));
+    const Menomomentti = mergeMenomomentti(items.map(i => i.Menomomentti ?? []));
     return {
       numero,
       nimi: items.find(i => i.nimi)?.nimi ?? '',
@@ -398,7 +398,7 @@ function mergePaaluokka(lists: ResolvedPaaluokka[][]): MergedPaaluokka[] {
       map.get(k)!.push(p);
     }
   return [...map.entries()].map(([numero, items]) => {
-    const Menoluku = mergeMenoluku(items.map(i => i.Menoluku));
+    const Menoluku = mergeMenoluku(items.map(i => i.Menoluku ?? []));
     return {
       numero,
       nimi: items.find(i => i.nimi)?.nimi ?? '',
@@ -434,7 +434,7 @@ function mergeTuloluku(lists: Tuloluku[][]): MergedTuloluku[] {
       map.get(k)!.push(t);
     }
   return [...map.entries()].map(([numero, items]) => {
-    const Tulomomentti = mergeTulomomentti(items.map(i => i.Tulomomentti));
+    const Tulomomentti = mergeTulomomentti(items.map(i => i.Tulomomentti ?? []));
     return {
       numero,
       nimi: items.find(i => i.nimi)?.nimi ?? '',
@@ -454,7 +454,7 @@ function mergeOsasto(lists: ResolvedOsasto[][]): MergedOsasto[] {
       map.get(k)!.push(o);
     }
   return [...map.entries()].map(([numero, items]) => {
-    const Tuloluku = mergeTuloluku(items.map(i => i.Tuloluku));
+    const Tuloluku = mergeTuloluku(items.map(i => i.Tuloluku ?? []));
     return {
       numero,
       nimi: items.find(i => i.nimi)?.nimi ?? '',
